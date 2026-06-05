@@ -1,74 +1,186 @@
-body {
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: linear-gradient(to right, rgba(20, 147, 220), rgba(143, 7, 129, 0.897) );
-}
-.box {
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-background-color: rgba(0, 0, 0, 0.8);
-padding: 20px;  
-border-radius: 15px;
-width: 22%;
-color: white;
 }
 
-.input-box {
+/* BODY */
+body{
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: linear-gradient(
+        to right,
+        rgba(20,147,220),
+        rgba(143,7,129,0.897)
+    );
+
+    color: white;
+}
+
+/* CONTAINER */
+.box{
+    width: 100%;
+    max-width: 430px;
+
+    padding: 25px;
+
+    background-color: rgba(2, 15, 51, 0.92);
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* FORMULÁRIO */
+fieldset{
+    border: 2px solid #1493dc;
+    border-radius: 12px;
+    padding: 25px;
+}
+
+legend{
+    padding: 10px 18px;
+
+    text-align: center;
+
+    background-image: linear-gradient(
+        to right,
+        rgba(20,147,220),
+        rgba(143,7,129,0.897)
+    );
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+legend a{
+    color: white;
+    text-decoration: none;
+}
+
+.titulo{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* INPUTS */
+.input-box{
     position: relative;
+    margin-bottom: 25px;
 }
 
-.input-user {
-    
-    background: none;
+.input-user{
+    width: 100%;
+
+    padding: 8px 0;
+
+    background: transparent;
+
     border: none;
     border-bottom: 1px solid white;
     outline: none;
+
     color: white;
+
     font-size: 15px;
-    width: 100%;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
-fieldset {
-    border: 3px solid dodgerblue;
-}
-
-legend {
-    border: 1px solid dodgerblue;
-    padding: 15px;
-    text-align: center;
-    background-color: dodgerblue;
-    border-radius: 10px;
-    color: white;
-    
-}
-
-.label-input {
+.label-input{
     position: absolute;
-    top: 0px;
-    left: 0px;
+    top: 8px;
+    left: 0;
+
     pointer-events: none;
-    transition: .5s;
+
+    color: #cbd5e1;
+
+    transition: 0.3s;
 }
 
-.input-user:focus ~ .label-input, .input-user:valid ~ .label-input {
-    top: -20px;
+.input-user:focus ~ .label-input,
+.input-user:valid ~ .label-input{
+    top: -14px;
     font-size: 12px;
-    color: dodgerblue;
+    color: #38bdf8;
 }
 
-#submit {
-    background-image: linear-gradient(to right, rgba(20, 147, 220), rgba(143, 7, 129, 0.897) );
+/* DATA */
+input[type="date"]{
+    color-scheme: dark;
+}
+
+/* RADIO */
+.grupo-radio{
+    margin: 15px 0 25px;
+}
+
+.grupo-radio p{
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.grupo-radio label{
+    margin-right: 12px;
+}
+
+/* LINKS */
+.box a{
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.box a:hover{
+    text-decoration: underline;
+}
+
+/* BOTÃO */
+#submit{
     width: 100%;
+
+    margin-top: 20px;
+    padding: 14px;
+
     border: none;
-    padding: 15px;
-    color: white;
-    font-size: 15px;
-    cursor: pointer;
     border-radius: 10px;
+
+    background-image: linear-gradient(
+        to right,
+        rgba(20,147,220),
+        rgba(143,7,129,0.897)
+    );
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
 }
 
-#submit:hover {
-    background-image: linear-gradient(to right, rgb(13, 106, 160), rgba(100, 4, 91, 0.897) );
+#submit:hover{
+    transform: scale(1.02);
+    opacity: 0.9;
+}
+
+/* RESPONSIVIDADE */
+@media(max-width: 500px){
+    .box{
+        max-width: 90%;
+        padding: 18px;
+    }
+
+    fieldset{
+        padding: 20px;
+    }
 }

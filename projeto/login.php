@@ -7,7 +7,7 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="assets/css/cadastro.css">
 </head>
-    
+    <!-- Colocar logo da BitShop em próximas modificações-->
 <body>
     <div class="box">
         <form action="controlles/proc_login.php" method="post">
