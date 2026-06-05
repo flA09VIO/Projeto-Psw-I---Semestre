@@ -11,19 +11,7 @@
 
 <body>
     <div class="box">
-        <?php
-        session_start();
 
-        if (isset($_SESSION['erro'])) {
-            echo '<p class="mensagem erro">' . $_SESSION['erro'] . '</p>';
-            unset($_SESSION['erro']);
-        }
-
-        if (isset($_SESSION['sucesso'])) {
-            echo '<p class="mensagem sucesso">' . $_SESSION['sucesso'] . '</p>';
-            unset($_SESSION['sucesso']);
-        }
-        ?>
         <form action="controlles/proc_login.php" method="post">
             <fieldset>
                 <legend><a href="index.php">BITShop</a>
@@ -41,6 +29,21 @@
                     <label class="label-input" for="senha">Digite sua senha</label>
                 </div>
                 <br>
+                <?php
+                session_start();
+
+                if (isset($_SESSION['erro'])) {
+                    echo '<p class="mensagem erro">' . $_SESSION['erro'] . '</p>';
+                    unset($_SESSION['erro']);
+                }
+
+                if (isset($_SESSION['sucesso'])) {
+                    echo '<p class="mensagem sucesso">' . $_SESSION['sucesso'] . '</p>';
+                    unset($_SESSION['sucesso']);
+                }
+                ?>
+                <br>
+
 
                 <p>
                     <a class="cadastro" href="cadastro.php">Faça seu cadastro </a>
@@ -50,6 +53,7 @@
                 <button type="submit" name="submit" id="submit">Entrar</button>
             </fieldset>
         </form>
+
 
     </div>
 

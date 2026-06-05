@@ -12,19 +12,6 @@
     <!-- Colocar logo da BitShop em próximas modificações-->
 
     <div class="box">
-        <?php
-        session_start();
-
-        if (isset($_SESSION['erro'])) {
-            echo '<p class="mensagem erro">' . $_SESSION['erro'] . '</p>';
-            unset($_SESSION['erro']);
-        }
-
-        if (isset($_SESSION['sucesso'])) {
-            echo '<p class="mensagem sucesso">' . $_SESSION['sucesso'] . '</p>';
-            unset($_SESSION['sucesso']);
-        }
-        ?>
 
         <form action="controlles/proc_cadastro.php" method="post">
             <fieldset>
@@ -75,7 +62,21 @@
                     <input class="input-user" type="password" name="confirmar_senha" id="confirmar_senha" required>
                     <label class="label-input" for="confirmar_senha">Confirmar senha</label>
                 </div>
-                
+
+                <?php
+                session_start();
+
+                if (isset($_SESSION['erro'])) {
+                    echo '<p class="mensagem erro">' . $_SESSION['erro'] . '</p>';
+                    unset($_SESSION['erro']);
+                }
+
+                if (isset($_SESSION['sucesso'])) {
+                    echo '<p class="mensagem sucesso">' . $_SESSION['sucesso'] . '</p>';
+                    unset($_SESSION['sucesso']);
+                }
+                ?>
+
                 <button type="submit" name="submit" id="submit">Cadastrar</button>
                 <br>
                 <br>
