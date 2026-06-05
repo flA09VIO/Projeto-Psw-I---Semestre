@@ -6,6 +6,8 @@ $produtos = json_decode(
     true
 );
 
+shuffle($produtos);
+
 $destaques = array_slice($produtos, 0, 12);
 ?>
 
@@ -98,16 +100,23 @@ $destaques = array_slice($produtos, 0, 12);
                     alt="<?php echo $produto['nome']; ?>"
                 >
 
+                <span class="tag-oferta">Oferta</span>
+
                 <h3><?php echo $produto['nome']; ?></h3>
 
-                <p>
-                    R$ <?php echo number_format(
-                        $produto['preco'],
-                        2,
-                        ',',
-                        '.'
-                    ); ?>
+                <?php if(isset($produto['preco_antigo'])): ?>
+                    <p class="preco-antigo">
+                        R$ <?php echo number_format($produto['preco_antigo'], 2, ',', '.'); ?>
+                    </p>
+                <?php endif; ?>
+
+                <p class="preco-atual">
+                    R$ <?php echo number_format($produto['preco'], 2, ',', '.'); ?>
                 </p>
+
+                <button class="btn-carrinho">
+                    Adicionar ao Carrinho
+                </button>
 
             </div>
 
