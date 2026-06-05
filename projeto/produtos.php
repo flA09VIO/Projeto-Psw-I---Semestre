@@ -11,6 +11,14 @@ $busca = '';
 if(isset($_GET['busca'])){
     $busca = trim($_GET['busca']);
 }
+
+$categoria = '';
+
+if(isset($_GET['categoria'])){
+    $categoria = trim($_GET['categoria']);
+}
+
+$encontrouProduto = false;
 ?>
 
 <div class="produtos">
@@ -19,11 +27,20 @@ if(isset($_GET['busca'])){
 
     <?php
         if(
+            $categoria != '' &&
+            $produto['categoria'] != $categoria
+        ){
+            continue;
+        }
+
+        if(
             $busca != '' &&
             stripos($produto['nome'], $busca) === false
         ){
             continue;
         }
+
+        $encontrouProduto = true;
     ?>
 
     <div class="produto">
@@ -54,5 +71,11 @@ if(isset($_GET['busca'])){
 <?php endforeach; ?>
 
 </div>
+
+<?php if(!$encontrouProduto): ?>
+    <p class="mensagem-vazia">
+        Nenhum produto encontrado.
+    </p>
+<?php endif; ?>
 
 <?php include 'includes/footer.php'; ?>
