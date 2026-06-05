@@ -36,19 +36,37 @@
     <div class="produtos">
 
         <div class="produto">
-            <img src="assets/img/produto1.jpg" alt="Produto">
+            <img src="assets/img/mouse.png" alt="Produto">
             <h3>Mouse Gamer RGB</h3>
             <p>R$ 99,90</p>
         </div>
 
         <div class="produto">
-            <img src="assets/img/produto2.jpg" alt="Produto">
+            <img src="assets/img/teclado.png" alt="Produto">
             <h3>Teclado Mecânico</h3>
             <p>R$ 199,90</p>
         </div>
 
         <div class="produto">
-            <img src="assets/img/produto3.jpg" alt="Produto">
+            <img src="assets/img/headset.jpg" alt="Produto">
+            <h3>Headset Gamer</h3>
+            <p>R$ 149,90</p>
+        </div>
+        
+        <div class="produto">
+            <img src="assets/img/mouse.png" alt="Produto">
+            <h3>Mouse Gamer RGB</h3>
+            <p>R$ 99,90</p>
+        </div>
+
+        <div class="produto">
+            <img src="assets/img/teclado.png" alt="Produto">
+            <h3>Teclado Mecânico</h3>
+            <p>R$ 199,90</p>
+        </div>
+
+        <div class="produto">
+            <img src="assets/img/headset.jpg" alt="Produto">
             <h3>Headset Gamer</h3>
             <p>R$ 149,90</p>
         </div>

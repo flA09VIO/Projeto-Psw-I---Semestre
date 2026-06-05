@@ -224,50 +224,167 @@ nav a:hover{
     border-radius: 0 8px 8px 0;
 }
 
-
-/*css dos Produtos ____________________________________________________________________________________________________________________-
-*/
+/* =======================================================================
+   PRODUTOS
+======================================================================= */
 .produtos{
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
     gap: 20px;
+
     padding: 30px;
 }
 
-.produto{
-    width: 250px;
-    background-color: #1E293B;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
+@media(max-width: 1400px){
+    .produtos{
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
+@media(max-width: 900px){
+    .produtos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 600px){
+    .produtos{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}   
+/* CARD DO PRODUTO */
+.produto{
+    width: 100%;
+
+    min-height: 380px;
+
+    background-color: #1E293B;
+
+    color: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    transition: transform 0.3s ease;
+}
+/* EFEITO AO PASSAR O MOUSE */
+.produto:hover{
+    transform: translateY(-5px);
+}
+
+/* IMAGEM DO PRODUTO */
+.produto img{
+    width: 100%;
+    height: 200px;
+
+    object-fit: contain;
+
+    background-color: white;
+
+    border-radius: 8px;
+
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+/* NOME DO PRODUTO */
 .produto h3{
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+/* INFORMAÇÕES */
+.produto p{
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+/* =======================================================================
+   FOOTER
+======================================================================= */
+
+footer{
+    margin-top: 60px;
+    background-color: #020f33;
+    color: white;
+}
+
+/* LINHA GRADIENTE */
+
+.footer-gradient{
+    height: 4px;
+
+    background-image: linear-gradient(
+        to right,
+        rgba(20,147,220),
+        rgba(143,7,129,0.897)
+    );
+}
+
+/* CONTAINER */
+
+.footer-container{
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 40px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* COLUNAS */
+
+.footer-coluna{
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-coluna h3{
+    margin-bottom: 15px;
+    color: white;
+}
+
+.footer-coluna p{
+    line-height: 1.8;
+}
+
+.footer-coluna ul{
+    list-style: none;
+}
+
+.footer-coluna li{
     margin-bottom: 10px;
 }
 
-.produto p{
-    margin-bottom: 5px;
-}
-
-/*css para imagem ________________________________________________________________________________________________________________________*/
-.produto img{
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.produto{
-    width: 250px;
-    background-color: #1E293B;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
+.footer-coluna a{
+    color: #d7d7d7;
+    text-decoration: none;
     transition: 0.3s;
 }
 
-.produto:hover{
-    transform: translateY(-5px);
+.footer-coluna a:hover{
+    color: #3bb8ff;
+}
+
+/* PARTE INFERIOR */
+
+.footer-bottom{
+    text-align: center;
+
+    padding: 18px;
+
+    background-color: #010a22;
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-bottom p{
+    font-size: 0.9rem;
 }

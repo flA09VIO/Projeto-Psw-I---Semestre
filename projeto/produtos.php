@@ -13,6 +13,8 @@ if(isset($_GET['busca'])){
 }
 ?>
 
+<div class="produtos">
+
 <?php foreach($produtos as $produto): ?>
 
     <?php
@@ -24,29 +26,33 @@ if(isset($_GET['busca'])){
         }
     ?>
 
-   <div class="produto">
+    <div class="produto">
 
-    <img
-        src="<?php echo $produto['imagem']; ?>"
-        alt="<?php echo $produto['nome']; ?>"
-    >
+        <img
+            src="<?php echo $produto['imagem']; ?>"
+            alt="<?php echo $produto['nome']; ?>"
+        >
 
-    <h3><?php echo $produto['nome']; ?></h3>
+        <h3><?php echo $produto['nome']; ?></h3>
 
-    <p>
-        Categoria:
-        <?php echo $produto['categoria']; ?>
-    </p>
+        <p>
+            Categoria:
+            <?php echo $produto['categoria']; ?>
+        </p>
 
-    <p>
-        R$ <?php echo number_format(
-            $produto['preco'],
-            2,
-            ',',
-            '.'
-        ); ?>
-    </p>
+        <p>
+            R$ <?php echo number_format(
+                $produto['preco'],
+                2,
+                ',',
+                '.'
+            ); ?>
+        </p>
+
+    </div>
+
+<?php endforeach; ?>
 
 </div>
 
-<?php endforeach; ?>
+<?php include 'includes/footer.php'; ?>
