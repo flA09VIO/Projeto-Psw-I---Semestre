@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nome": "Mouse Gamer RGB",
+        "preco": 99.90,
+        "categoria": "Periféricos",
+        "imagem": "assets/img/mouse.jpg"
+    },
+    {
+        "id": 2,
+        "nome": "Teclado Mecânico Red Switch",
+        "preco": 249.90,
+        "categoria": "Periféricos",
+        "imagem": "assets/img/teclado.jpg"
+    },
+    {
+        "id": 3,
+        "nome": "Headset Gamer 7.1",
+        "preco": 199.90,
+        "categoria": "Periféricos",
+        "imagem": "assets/img/headset.jpg"
+    }
+]
