@@ -7,9 +7,23 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="assets/css/cadastro.css">
 </head>
-    <!-- Colocar logo da BitShop em próximas modificações-->
+<!-- Colocar logo da BitShop em próximas modificações-->
+
 <body>
     <div class="box">
+        <?php
+        session_start();
+
+        if (isset($_SESSION['erro'])) {
+            echo '<p class="mensagem erro">' . $_SESSION['erro'] . '</p>';
+            unset($_SESSION['erro']);
+        }
+
+        if (isset($_SESSION['sucesso'])) {
+            echo '<p class="mensagem sucesso">' . $_SESSION['sucesso'] . '</p>';
+            unset($_SESSION['sucesso']);
+        }
+        ?>
         <form action="controlles/proc_login.php" method="post">
             <fieldset>
                 <legend><a href="index.php">BITShop</a>
@@ -31,6 +45,7 @@
                 <p>
                     <a class="cadastro" href="cadastro.php">Faça seu cadastro </a>
                 </p>
+
 
                 <button type="submit" name="submit" id="submit">Entrar</button>
             </fieldset>
