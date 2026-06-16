@@ -25,15 +25,28 @@
         </div>
 
         <div class="footer-coluna">
-            <h3>Desenvolvedor</h3>
+            <h3>Desenvolvedores</h3>
 
-            <p>Luiz Flávio Rodrigues Silva</p>
+            <p></p>
 
             <p>
                 <a href="https://github.com/flA09VIO" target="_blank">
-                    GitHub
+                    Luiz Flávio Rodrigues Silva - GitHub
                 </a>
             </p>
+
+            <p>
+                <a href="https://www.instagram.com/_kaiquerb/" target="_blank">
+                     Kaique Ribeiro Bispo - Instagram
+                </a>
+            </p>
+
+            <p>
+                <a href="https://www.instagram.com/ot.vv_/" target="_blank">
+                     Iury Otávio Verdeiro Montalvão - Instagram                         
+                </a>
+            </p>
+
         </div>
 
     </div>

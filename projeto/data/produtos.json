@@ -209,4 +209,37 @@
         "categoria":"Computadores",
         "imagem": "assets/img/computador2.png"
     }
+    ,
+{
+    "id": 27,
+    "nome": "Teclado Mecânico Gamer RGB",
+    "preco": 229.90,
+    "preco_antigo": 289.90,
+    "categoria": "Periféricos",
+    "imagem": "assets/img/teclado2.png"
+},
+{
+    "id": 28,
+    "nome": "Teclado Gamer Semi Mecânico",
+    "preco": 70.90,
+    "preco_antigo": 90.00,
+    "categoria": "Periféricos",
+    "imagem": "assets/img/teclado3.png"
+},
+{
+    "id": 29,
+    "nome": "Headset Gamer RGB 7.1",
+    "preco": 119.90,
+    "preco_antigo": 149.90,
+    "categoria": "Periféricos",
+    "imagem": "assets/img/headset2.png"
+},
+{
+    "id": 30,
+    "nome": "Fone de Ouvido Bluetooth",
+    "preco": 90.90,
+    "preco_antigo": 129.90,
+    "categoria": "Periféricos",
+    "imagem": "assets/img/fonebluetooth.png"
+}
 ]

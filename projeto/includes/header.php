@@ -37,6 +37,7 @@ if(session_status() === PHP_SESSION_NONE){
         <ul>
             <li><a href="index.php">Início</a></li>
             <li><a href="produtos.php">Produtos</a></li>
+            <li><a href="sobre.php">Sobre</a></li>
 
             <?php if(isset($_SESSION['usuario'])): ?>
 
