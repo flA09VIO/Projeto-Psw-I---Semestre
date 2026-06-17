@@ -1,163 +1,203 @@
+/* =========================================================
+RESET E VARIÁVEIS
+========================================================= */
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
 }
 
+:root{
+--azul:#1493dc;
+--azul-hover:#0d6aa0;
+--fundo:#0F172A;
+--card:#1E293B;
+--texto:#cbd5e1;
+--link:#38bdf8;
+--erro:#dc2626;
+--sucesso:#22c55e;
+}
+
+/* =========================================================
+ESTRUTURA GERAL
+========================================================= */
 body{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#0F172A;
-    color:white;
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:var(--fundo);
+color:white;
 }
 
 .box{
-    width:100%;
-    max-width:430px;
-    padding:25px;
-    background:#1E293B;
-    border-radius:15px;
-    border-top:4px solid #1493dc;
-    box-shadow:0 10px 30px rgba(0,0,0,.4);
+width:100%;
+max-width:430px;
+padding:25px;
+background:var(--card);
+border-radius:15px;
+border-top:4px solid var(--azul);
+box-shadow:0 10px 30px rgba(0,0,0,.4);
 }
 
+/* =========================================================
+FORMULÁRIO
+========================================================= */
 fieldset{
-    border:2px solid #1493dc;
-    border-radius:12px;
-    padding:25px;
+border:2px solid var(--azul);
+border-radius:12px;
+padding:25px;
 }
 
 legend{
-    padding:10px 18px;
-    text-align:center;
-    background:#1493dc;
-    border-radius:8px;
-    font-weight:bold;
-}
-
-legend a,
-.box a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
+padding:10px 18px;
+text-align:center;
+background:var(--azul);
+border-radius:8px;
+font-weight:bold;
 }
 
 .titulo{
-    text-align:center;
-    margin-bottom:25px;
+text-align:center;
+margin-bottom:25px;
 }
 
+/* =========================================================
+LINKS
+========================================================= */
+legend a,
+.box a{
+text-decoration:none;
+font-weight:bold;
+}
+
+.box a{
+color:var(--link);
+}
+
+.box a:hover{
+text-decoration:underline;
+}
+
+/* =========================================================
+CAMPOS DE ENTRADA
+========================================================= */
 .input-box{
-    position:relative;
-    margin-bottom:25px;
+position:relative;
+margin-bottom:25px;
 }
 
 .input-user{
-    width:100%;
-    padding:8px 0;
-    background:transparent;
-    border:none;
-    border-bottom:1px solid white;
-    outline:none;
-    color:white;
-    font-size:15px;
-    letter-spacing:1px;
+width:100%;
+padding:8px 0;
+background:transparent;
+border:none;
+border-bottom:1px solid white;
+outline:none;
+color:white;
+font-size:15px;
+letter-spacing:1px;
 }
 
 .input-user:focus{
-    border-bottom:2px solid #1493dc;
+border-bottom:2px solid var(--azul);
 }
 
 .label-input{
-    position:absolute;
-    top:8px;
-    left:0;
-    pointer-events:none;
-    color:#cbd5e1;
-    transition:.3s;
+position:absolute;
+top:8px;
+left:0;
+pointer-events:none;
+color:var(--texto);
+transition:.3s;
 }
 
 .input-user:focus ~ .label-input,
 .input-user:valid ~ .label-input{
-    top:-14px;
-    font-size:12px;
-    color:#38bdf8;
+top:-14px;
+font-size:12px;
+color:var(--link);
 }
 
 input[type="date"]{
-    color-scheme:dark;
+color-scheme:dark;
 }
 
+/* =========================================================
+GRUPO DE RADIO
+========================================================= */
 .grupo-radio{
-    margin:15px 0 25px;
+margin:15px 0 25px;
 }
 
 .grupo-radio p{
-    margin-bottom:10px;
-    font-weight:bold;
+margin-bottom:10px;
+font-weight:bold;
 }
 
 .grupo-radio label{
-    margin-right:12px;
+margin-right:12px;
 }
 
-.box a{
-    color:#38bdf8;
-}
-
-.box a:hover{
-    text-decoration:underline;
-}
-
+/* =========================================================
+BOTÃO
+========================================================= */
 #submit{
-    width:100%;
-    margin-top:20px;
-    padding:14px;
-    border:none;
-    border-radius:10px;
-    background:#1493dc;
-    color:white;
-    font-size:15px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.3s;
+width:100%;
+margin-top:20px;
+padding:14px;
+border:none;
+border-radius:10px;
+background:var(--azul);
+color:white;
+font-size:15px;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
 }
 
 #submit:hover{
-    background:#0d6aa0;
-    transform:translateY(-2px);
+background:var(--azul-hover);
+transform:translateY(-2px);
 }
 
+/* =========================================================
+MENSAGENS DE ERRO E SUCESSO
+========================================================= */
 .mensagem{
-    padding:12px;
-    margin-bottom:15px;
-    border-radius:8px;
-    text-align:center;
-    font-weight:bold;
+padding:12px;
+margin-bottom:15px;
+border-radius:8px;
+text-align:center;
+font-weight:bold;
 }
 
 .erro{
-    background:rgba(220,38,38,.2);
-    color:#fca5a5;
-    border:1px solid #dc2626;
+background:rgba(220,38,38,.2);
+color:#fca5a5;
+border:1px solid var(--erro);
 }
 
 .sucesso{
-    background:rgba(34,197,94,.2);
-    color:#86efac;
-    border:1px solid #22c55e;
+background:rgba(34,197,94,.2);
+color:#86efac;
+border:1px solid var(--sucesso);
 }
 
+/* =========================================================
+RESPONSIVIDADE
+========================================================= */
 @media(max-width:500px){
-    .box{
-        max-width:90%;
-        padding:18px;
-    }
+.box{
+max-width:90%;
+padding:18px;
+}
 
-    fieldset{
-        padding:20px;
-    }
+```
+fieldset{
+    padding:20px;
+}
+```
+
 }
