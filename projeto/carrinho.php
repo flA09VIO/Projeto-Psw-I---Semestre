@@ -22,7 +22,7 @@ $total = 0;
 
 <section class="carrinho">
 
-```
+
 <h2>Meu Carrinho</h2>
 
 <?php if(empty($carrinho)): ?>
@@ -143,7 +143,7 @@ $total = 0;
     </div>
 
 <?php endif; ?>
-```
+
 
 </section>
 

@@ -1,4 +1,3 @@
-
 <?php
 // Carrega as funções reutilizáveis do projeto.
 require_once 'includes/funcoes.php';
@@ -17,6 +16,7 @@ if(!is_array($produtos)){
 // Variável usada para armazenar o texto pesquisado pelo usuário.
 $busca = '';
 
+// Verifica se foi enviada alguma busca pela URL.
 if(isset($_GET['busca'])){
     $busca = trim($_GET['busca']);
 }
@@ -24,6 +24,7 @@ if(isset($_GET['busca'])){
 // Variável usada para armazenar a categoria selecionada.
 $categoria = '';
 
+// Verifica se foi enviada alguma categoria pela URL.
 if(isset($_GET['categoria'])){
     $categoria = trim($_GET['categoria']);
 }
@@ -32,83 +33,100 @@ if(isset($_GET['categoria'])){
 $encontrouProduto = false;
 ?>
 
+<!-- Área onde os produtos serão exibidos em formato de cards. -->
+
 <div class="produtos">
 
-    <?php foreach($produtos as $produto): ?>
 
-        <?php
-        // Se uma categoria foi escolhida, mostra apenas produtos dessa categoria.
-        if(
-            $categoria != '' &&
-            $produto['categoria'] != $categoria
-        ){
-            continue;
-        }
+<!-- Percorre todos os produtos carregados do arquivo JSON. -->
+<?php foreach($produtos as $produto): ?>
 
-        // Se uma busca foi feita, mostra apenas produtos com nome correspondente.
-        if(
-            $busca != '' &&
-            stripos($produto['nome'], $busca) === false
-        ){
-            continue;
-        }
+    <?php
+    // Se uma categoria foi escolhida, mostra apenas produtos dessa categoria.
+    if(
+        $categoria != '' &&
+        $produto['categoria'] != $categoria
+    ){
+        continue;
+    }
 
-        // Se chegou até aqui, significa que o produto será exibido.
-        $encontrouProduto = true;
-        ?>
+    // Se uma busca foi feita, mostra apenas produtos com nome correspondente.
+    if(
+        $busca != '' &&
+        stripos($produto['nome'], $busca) === false
+    ){
+        continue;
+    }
 
-        <div class="produto">
+    // Se chegou até aqui, significa que o produto será exibido.
+    $encontrouProduto = true;
+    ?>
 
-            <img
-                src="<?php echo protegerTexto($produto['imagem']); ?>"
-                alt="<?php echo protegerTexto($produto['nome']); ?>"
+    <!-- Card individual de cada produto. -->
+    <div class="produto">
+
+        <!-- Imagem do produto. -->
+        <img
+            src="<?php echo protegerTexto($produto['imagem']); ?>"
+            alt="<?php echo protegerTexto($produto['nome']); ?>"
+        >
+
+        <!-- Selo de oferta exibido no card. -->
+        <span class="tag-oferta">Oferta</span>
+
+        <!-- Nome do produto. -->
+        <h3>
+            <?php echo protegerTexto($produto['nome']); ?>
+        </h3>
+
+        <!-- Exibe o preço antigo apenas se ele existir no JSON. -->
+        <?php if(isset($produto['preco_antigo'])): ?>
+            <p class="preco-antigo">
+                <?php echo formatarPreco($produto['preco_antigo']); ?>
+            </p>
+        <?php endif; ?>
+
+        <!-- Exibe o preço atual do produto. -->
+        <p class="preco-atual">
+            <?php echo formatarPreco($produto['preco']); ?>
+        </p>
+
+        <!-- Formulário responsável por adicionar o produto ao carrinho. -->
+        <form action="controlles/proc_carrinho.php" method="post">
+
+            <!-- Envia o ID do produto para o controle do carrinho. -->
+            <input
+                type="hidden"
+                name="id"
+                value="<?php echo (int) $produto['id']; ?>"
             >
 
-            <span class="tag-oferta">Oferta</span>
+            <!-- Botão para adicionar o produto ao carrinho. -->
+            <button type="submit" class="btn-carrinho">
+                Adicionar ao Carrinho
+            </button>
 
-            <h3>
-                <?php echo protegerTexto($produto['nome']); ?>
-            </h3>
+        </form>
 
-            <?php if(isset($produto['preco_antigo'])): ?>
-                <p class="preco-antigo">
-                    <?php echo formatarPreco($produto['preco_antigo']); ?>
-                </p>
-            <?php endif; ?>
+    </div>
 
-            <p class="preco-atual">
-                <?php echo formatarPreco($produto['preco']); ?>
-            </p>
+<?php endforeach; ?>
 
-            <form action="controlles/proc_carrinho.php" method="post">
-
-                <input
-                    type="hidden"
-                    name="id"
-                    value="<?php echo (int) $produto['id']; ?>"
-                >
-
-                <button type="submit" class="btn-carrinho">
-                    Adicionar ao Carrinho
-                </button>
-
-            </form>
-
-        </div>
-
-    <?php endforeach; ?>
 
 </div>
 
+<!-- Mensagem exibida caso nenhum produto seja encontrado na busca ou categoria. -->
+
 <?php if(!$encontrouProduto): ?>
 
-    <p class="mensagem-vazia">
-        Nenhum produto encontrado.
-    </p>
+
+<p class="mensagem-vazia">
+    Nenhum produto encontrado.
+</p>
+
 
 <?php endif; ?>
 
-<?php include 'includes/footer.php'; ?>
-:::
+<!-- Inclui o rodapé da página. -->
 
-A única coisa que removi foram as crases ``` que tinham entrado no meio do arquivo. O restante está correto.
+<?php include 'includes/footer.php'; ?>

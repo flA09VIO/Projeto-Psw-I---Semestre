@@ -58,7 +58,7 @@ $produtosFixos = [
 
 <section class="banner">
 
-```
+
 <div class="banner-conteudo">
 
     <h2>As melhores ofertas em tecnologia</h2>
@@ -72,14 +72,14 @@ $produtosFixos = [
     </a>
 
 </div>
-```
+
 
 </section>
 
 <section class="categorias">
 
-```
-<h2>Categorias</h2>
+
+<h2>Categorias</h2><br>
 
 <div class="cards">
 
@@ -100,13 +100,13 @@ $produtosFixos = [
     </a>
 
 </div>
-```
+
 
 </section>
 
 <section class="destaques">
 
-```
+
 <h2>Produtos em Destaque</h2>
 
 <div class="produtos">
@@ -147,13 +147,13 @@ $produtosFixos = [
     <?php endforeach; ?>
 
 </div>
-```
+
 
 </section>
 
 <section class="destaques ofertas-home">
 
-```
+
 <h2>Ofertas em Destaque</h2>
 
 <div class="produtos">
@@ -206,7 +206,7 @@ $produtosFixos = [
     <?php endforeach; ?>
 
 </div>
-```
+
 
 </section>
 

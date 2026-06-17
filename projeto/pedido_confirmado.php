@@ -1,26 +1,36 @@
 <?php
+// Inclui o cabeçalho da página.
 include 'includes/header.php';
 
+// Remove o carrinho da sessão após a confirmação do pedido.
 unset($_SESSION['carrinho']);
 ?>
 
 <section class="painel">
 
-    <div class="painel-card mensagem-final">
 
-        <h2>321...!!</h2>
+<!-- Card principal da mensagem final do pedido. -->
+<div class="painel-card mensagem-final">
 
-        <p>
-            Obrigado meu querido 2AII, nós somos os melhores(++), um abraço a todos!
-        </p>
+    <!-- Mensagem de destaque exibida após confirmar o pedido. -->
+    <h2>321...!!</h2>
 
-        <div class="painel-acoes">
-            <a href="index.php" class="btn-painel">
-                Voltar para a BITShop
-            </a>
-        </div>
+    <!-- Texto de agradecimento exibido ao usuário. -->
+    <p>
+        Obrigado meu querido 2AII, nós somos os melhores(++), um abraço a todos!
+    </p>
 
+    <!-- Área com o botão de retorno para a loja. -->
+    <div class="painel-acoes">
+
+        <!-- Link para voltar à página inicial da BITShop. -->
+        <a href="index.php" class="btn-painel">
+            Voltar para a BITShop
+        </a>
     </div>
+
+</div>
+
 
 </section>
 
